@@ -1,2 +1,3 @@
 # btaylor.github.io
-Website project for Web Development I
+BreAnna Taylor
+CIS155 | Web Development

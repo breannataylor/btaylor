@@ -1,0 +1,12 @@
+/* element type selector: */
+body {
+    background-color:#FFFDD0;
+}
+
+#title {
+    font-size: large;
+}
+
+.desc {
+    color:blueviolet;
+}
