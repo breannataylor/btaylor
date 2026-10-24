@@ -4,7 +4,7 @@
     /*Fonts*/
     --main-font: "Eagle Lake", serif; 
     --text-font: "Luxurious Roman", serif;
-    --heading-font: "Playfair Display SC", serif;
+    --subheading-font: "Playfair Display SC", serif;
 
     /*Font Sizes*/
     --title-size: 4rem;
@@ -40,9 +40,11 @@ body {
 
 h2~p {
     color: var(--main-color);
-    font-family: var(--heading-font);
+    font-family: var(--subheading-font);
 }
-
+li {
+    list-style-type: "❈  ";
+}
 a[href] {
     color: var(--main-color);
 }
@@ -57,3 +59,18 @@ a[href]:visited {
 .desc {
    color: rgb(90, 28, 135);
 }
+
+img {
+    border: rgb(196, 162, 77), 0.5em, solid;
+    border-radius: 1em;
+}
+
+footer {
+    color: rgb(94, 84, 35);
+}
+
+/*
+** Citatons **
+* https://codeshack.io/bullet-point-symbols/
+* https://fonts.google.com/
+*/
