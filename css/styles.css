@@ -4,6 +4,7 @@
     /*Fonts*/
     --main-font: "Eagle Lake", serif; 
     --text-font: "Luxurious Roman", serif;
+    --heading-font: "Playfair Display SC", serif;
 
     /*Font Sizes*/
     --title-size: 4rem;
@@ -18,6 +19,7 @@
 
 body {
     background-color: var(--main-bg);
+    font-family: var(--text-font);
 }
 
 #title {
@@ -38,7 +40,7 @@ body {
 
 h2~p {
     color: var(--main-color);
-    font-family: var(--text-font);
+    font-family: var(--heading-font);
 }
 
 a[href] {
@@ -49,9 +51,9 @@ a[href]:hover {
     color: rgb(15, 78, 82);
 }
 
-a[href]:visited{
+a[href]:visited {
     color: rgb(74, 53, 12)
 }
 .desc {
-    color:blueviolet;
+   color: rgb(90, 28, 135);
 }
