@@ -1,0 +1,57 @@
+:root {
+    --main-bg: #FFFDD0;
+
+    /*Fonts*/
+    --main-font: "Eagle Lake", serif; 
+    --text-font: "Luxurious Roman", serif;
+
+    /*Font Sizes*/
+    --title-size: 4rem;
+    --text-size: 1em;
+    --text-weight: 400;
+
+    /*Colors*/
+    --title-color: rgb(56, 44, 76);
+    --subheading-color: rgb(40, 15, 70);
+    --main-color: rgb(98,22,45);
+}
+
+body {
+    background-color: var(--main-bg);
+}
+
+#title {
+    font-size: var(--title-size);
+    font-family: var(--main-font);
+    color: var(--title-color);
+}
+
+.section-subheading::first-letter {
+    font-size: 1.5em;
+}
+
+.section-subheading {
+    color: var(--subheading-color);
+    font-family: var(--main-font);
+    font-weight: 400;
+}
+
+h2~p {
+    color: var(--main-color);
+    font-family: var(--text-font);
+}
+
+a[href] {
+    color: var(--main-color);
+}
+
+a[href]:hover {
+    color: rgb(15, 78, 82);
+}
+
+a[href]:visited{
+    color: rgb(74, 53, 12)
+}
+.desc {
+    color:blueviolet;
+}
