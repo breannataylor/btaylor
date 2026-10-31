@@ -1,5 +1,5 @@
 :root {
-    --main-bg: linear-gradient(rgb(171, 79, 79), rgb(165, 220, 165), rgb(202, 68, 155));
+    --main-bg: linear-gradient(rgb(171, 79, 79), rgb(165, 220, 165), rgb(182, 187, 44));
 
     /*Fonts*/
     --main-font: "Eagle Lake", serif; 
@@ -23,19 +23,20 @@ body {
 }
 aside {
     float: right;
+    width: 10%;
 }
-
-section {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-
+main {
+    float: left;
+    width: 80%;
 }
-
 #title {
     font-size: var(--title-size);
     font-family: var(--main-font);
     color: var(--title-color);
+}
+.favorites {
+    display: flex;
+    flex-direction: row;
 }
 
 .section-subheading::first-letter {
@@ -47,10 +48,18 @@ section {
     font-family: var(--main-font);
     font-weight: 400;
 }
-
+#local, #hazel, #reading {
+    flex: 1; /* setting flex-basis to 0 distributes flex items evenly across the flexbox*/
+    padding: 1rem 2rem 3rem;
+    border: black 1em dashed;
+}
 h2~p {
     color: var(--main-color);
     font-family: var(--subheading-font);
+}
+nav~p {
+    font-family: var(--subheading-font);
+    font-size: 2rem;
 }
 li {
     list-style-type: "❈  ";
@@ -60,23 +69,24 @@ a[href] {
 }
 
 a[href]:hover {
-    color: rgb(15, 78, 82);
+    color: rgb(0, 255, 85);
 }
 
 a[href]:visited {
-    color: rgb(74, 53, 12)
+    color: rgb(74, 12, 13)
 }
 .desc {
    color: rgb(90, 28, 135);
 }
 
 img {
-    border: rgb(196, 162, 77), 0.5em, solid;
+    border: rgb(2, 42, 241), 0.5em, dotted;
     border-radius: 1em;
 }
 
 footer {
     color: rgb(94, 84, 35);
+    clear: both;
 }
 
 /*
