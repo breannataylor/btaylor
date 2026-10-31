@@ -1,0 +1,69 @@
+:root {
+    --main-bg-color: linear-gradient(to bottom, red, yellow);
+    --heading-color: #dcdf37;
+    --horrible-bg: linear-gradient(to right, purple, rgb(77, 124, 78), rgb(99, 73, 14));
+    /* Random CSS fonts I was told to never use in my high school computing class */
+    --heading-font: "Snell Roundhand", cursive;
+    --main-font: "Chalkduster", fantasy;
+    --subheading-font: "Trattatello", fantasy;
+
+}
+body {
+    background-image: var(--main-bg-color);
+} 
+h1 {
+    align-items: center;
+    padding: 0 3rem 0 3rem;
+    font-family: var(--heading-font);
+    font-weight: 700;
+    font-size: 3rem;
+
+}
+h1, h2 {
+    color: var(--heading-color);
+}
+h2 {
+    font-family: var(--subheading-font);
+    letter-spacing: 2rem;
+}
+aside {
+border-left: blue 20px solid;
+float: right;
+font-size: medium;
+text-align: center;
+width: 10%;
+}
+a[href] {
+    padding-left: 1rem;
+    color: darkviolet;
+}
+main {
+    float: left;
+    width: 90%;
+    text-align: center;
+    font-family: var(--main-font);
+}
+main p {
+    text-align: justify;
+    border: lightseagreen 1rem dashed;
+    /* Making the explanation the center of attention */
+    padding: 4rem 2rem;
+}
+.fav-container {
+    column-count: 3;
+    /* Random margins - I used a random number picker between 1 and 5*/
+    margin: 1rem 4rem 2rem 5rem;
+    background-image: var(--horrible-bg);
+}
+.favorites {
+    /* Padding the inside to wrap the words and make it difficult to read and misaligns bg */
+    padding: 1rem 9rem;
+    border-right: 10px dotted rgb(204, 30, 192) ;
+}
+img {
+    border: green 2px dashed;
+}
+footer {
+    clear: both;
+    background-image: var(--horrible-bg);
+}

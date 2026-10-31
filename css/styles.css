@@ -1,5 +1,5 @@
 :root {
-    --main-bg: #FFFDD0;
+    --main-bg: linear-gradient(rgb(171, 79, 79), rgb(165, 220, 165), rgb(202, 68, 155));
 
     /*Fonts*/
     --main-font: "Eagle Lake", serif; 
@@ -12,14 +12,24 @@
     --text-weight: 400;
 
     /*Colors*/
-    --title-color: rgb(56, 44, 76);
-    --subheading-color: rgb(40, 15, 70);
-    --main-color: rgb(98,22,45);
+    --title-color: rgb(65, 59, 134);
+    --subheading-color: rgb(165, 33, 64);
+    --main-color: rgb(232, 24, 191);
 }
 
 body {
-    background-color: var(--main-bg);
+    background-image: var(--main-bg);
     font-family: var(--text-font);
+}
+aside {
+    float: right;
+}
+
+section {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
 }
 
 #title {
