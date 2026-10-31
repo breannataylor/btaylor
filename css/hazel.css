@@ -33,6 +33,7 @@ float: right;
 font-size: medium;
 text-align: center;
 width: 10%;
+font-size: 1em;
 }
 a[href] {
     padding-left: 1rem;

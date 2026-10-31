@@ -59,7 +59,8 @@ h2~p {
     color: var(--main-color);
     font-family: var(--subheading-font);
 }
-nav~p {
+aside {
+    /* Obscenely large navigation */
     font-family: var(--subheading-font);
     font-size: 2rem;
 }
