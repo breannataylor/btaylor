@@ -1,4 +1,5 @@
 :root {
+    /* Colors used multiple times */
     --main-bg-color: linear-gradient(to bottom, red, yellow);
     --heading-color: #dcdf37;
     --horrible-bg: linear-gradient(to right, purple, rgb(77, 124, 78), rgb(99, 73, 14));
@@ -67,3 +68,8 @@ footer {
     clear: both;
     background-image: var(--horrible-bg);
 }
+
+/*
+** Citatons **
+* https://www.w3.org/Style/Examples/007/fonts.en.html
+*/
