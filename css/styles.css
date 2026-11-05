@@ -30,10 +30,16 @@ nav {
 }
 .navigation {
     font-family: var(--subheading-font);
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    list-style-type: none;
+    border-top: black 2px solid;
+    border-bottom: black 2px solid;
+    justify-content: center;
 }
 
 .navigation li {
-    display: inline-block;
     padding: 0.5em 1em;
     margin: 0 1em;
     font-size: 1.5rem;
@@ -53,9 +59,7 @@ nav {
    text-align: center;
    padding-top: 1em;
 }
-main {
-    
-}
+
 /* Interactive Navigation */
 h2 {
     text-align: center;
@@ -77,9 +81,6 @@ h2 {
 }
 #local, #hazel, #reading {
     flex: 1; /* setting flex-basis to 0 distributes flex items evenly across the flexbox*/
-    /* Random padding that sqishes the elements, making it difficult to read   */
-    padding: 1em;
-    margin: 0.5em;
     border: rgb(210, 100, 100) 0.5em groove;
 
 }

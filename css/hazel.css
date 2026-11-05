@@ -3,11 +3,14 @@
     --main-bg-color: linear-gradient(to bottom, red, yellow);
     --heading-color: #dcdf37;
     --horrible-bg: linear-gradient(to right, purple, rgb(77, 124, 78), rgb(99, 73, 14));
-    /* Random CSS fonts I was told to never use in my high school computing class */
-    --heading-font: "Snell Roundhand", cursive;
-    --main-font: "Chalkduster", fantasy;
-    --subheading-font: "Trattatello", fantasy;
-
+   /*Fonts*/
+    --main-font: "Eagle Lake", serif; 
+    --text-font: "Luxurious Roman", serif;
+    --subheading-font: "Playfair Display SC", serif;
+    /*Font Sizes*/
+    --title-size: 4rem;
+    --text-size: 1em;
+    --text-weight: 400;
 }
 body {
     background-image: var(--main-bg-color);

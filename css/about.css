@@ -1,0 +1,11 @@
+:root {
+       /*Fonts*/
+    --main-font: "Eagle Lake", serif; 
+    --text-font: "Luxurious Roman", serif;
+    --subheading-font: "Playfair Display SC", serif;
+
+    /*Font Sizes*/
+    --title-size: 4rem;
+    --text-size: 1em;
+    --text-weight: 400;
+}

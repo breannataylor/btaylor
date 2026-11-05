@@ -7,9 +7,15 @@
     --nav-links: #754B4D;
     --nav-link-hover: #4f4824;
 
-    /* Fonts */
+   /*Fonts*/
+    --main-font: "Eagle Lake", serif; 
+    --text-font: "Luxurious Roman", serif;
+    --subheading-font: "Playfair Display SC", serif;
 
-
+    /*Font Sizes*/
+    --title-size: 4rem;
+    --text-size: 1em;
+    --text-weight: 400;
 }
 body,html {
     min-height: 100vh;
@@ -69,7 +75,11 @@ section {
     justify-content: center;
 }
 .navigation li {
-    padding: 1em;
+    padding: 0.5em 1em;
+    margin: 0 1em;
+    font-size: 1.5rem;
+    background-color: rgb(96, 151, 200);
+    border-radius: 1.5em 0em;
 }
 .navigation a[href] {
     color: var(--nav-links);
