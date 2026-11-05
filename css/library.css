@@ -7,63 +7,34 @@
     --nav-links: #754B4D;
     --nav-link-hover: #4f4824;
 
-   /*Fonts*/
-    --main-font: "Eagle Lake", serif; 
-    --text-font: "Luxurious Roman", serif;
-    --subheading-font: "Playfair Display SC", serif;
-
+    --section-bg: url(../images/pexels-eva-bronzini-peper-texture.jpg);
+    /* Fonts */
+    --heading-font: ""
     /*Font Sizes*/
     --title-size: 4rem;
     --text-size: 1em;
     --text-weight: 400;
 }
 body,html {
-    min-height: 100vh;
+    min-height: 100%;
 }
 body{
     background-color: var(--main-bg);
+    font-family: var(--text-font);
     height: 100%;
     width: 100%;
     line-height: 1.5;
     background-size: cover;
     background-repeat: no-repeat;
-    color: var(--text);
-    align-content: center;
 }
-main {
+.main-page {
     display: flex;
     margin: 0 auto;
     max-width: 90%;
 }
-/* media query to adjust for smaller screens */
-@media (max-width: 768px) {
-    main {
-        flex-direction: column;
-    }
-    aside {
-        flex-basis: auto;
-        margin-right: 0;
-        margin-bottom: 1em;
-    }
-
-    section {
-        flex-basis: auto;
-        margin: 0;
-    }
+li {
+    list-style-type: "❈  ";
 }
-aside {
-    flex-basis: 35%;
-    background-color:var(--aside-bg);
-    border-radius: 10px;
-    margin-right: 1em;
-}
-section {
-    flex-basis: 65%;
-    margin: 1em;
-    flex-wrap: wrap;
-
-}
-
 /* Navigation */
 .navigation {
     display: flex;
@@ -80,15 +51,52 @@ section {
     font-size: 1.5rem;
     background-color: rgb(96, 151, 200);
     border-radius: 1.5em 0em;
+    border: black 2px solid;
 }
 .navigation a[href] {
     color: var(--nav-links);
+    text-decoration: none;
 }
 .navigation a[href]:hover {
     color: var(--nav-link-hover);
-    background-color: rgba(129,10,71,0.32);
     padding: 0.5em;
     border-radius: 10px;
+}
+
+/* Sections */
+section {
+    flex-basis: 65%;
+    margin: 1em;
+    flex-wrap: wrap;
+    border: black 3px groove;
+    background-image: var(--section-bg);
+    background-size: contain;
+}
+section li a[href] {
+    text-decoration: none;
+    color: var(--nav-links);
+}
+section h2 {
+    text-align: center;
+}
+.library-current {
+    flex-basis: 60%;
+}
+.current-reading-section {
+    padding: 1rem 1em;
+    line-height: 3;
+}
+.library-wishlist-div {
+    display: flex;
+    direction: row;
+    flex-basis: 40%;
+
+}
+.wishlist-section {
+    flex-basis: 50%;
+}
+.bookstore-section {
+    flex-basis: 50%;
 }
 
 /* Headings */
@@ -101,8 +109,26 @@ aside h3 {
 h1 {
     text-align: center;
 }
-
-
 footer {
     clear: both;
 }
+/* media query to adjust for smaller screens */
+@media only screen and (max-width: 768px) {
+    .main-page {
+        flex-direction: column;
+    }
+    .navbar {
+        text-align: center;
+    }
+    .navigation {
+        flex-direction: column;
+        border: none;
+        text-align: center;
+        padding: 1em;
+    }
+    .navigation li {
+        margin: 0.25em 0;
+    }
+
+}
+
