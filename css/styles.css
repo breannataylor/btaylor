@@ -14,27 +14,53 @@
     /*Colors*/
     --title-color: rgb(65, 59, 134);
     --subheading-color: rgb(165, 33, 64);
-    --main-color: rgb(232, 24, 191);
+    --main-color: rgb(52, 8, 106);
+    --navigation-color: rgb(84, 18, 62);
 }
 
 body {
     background-image: var(--main-bg);
     font-family: var(--text-font);
+    color: var(--main-color);
 }
-aside {
-    float: right;
-    width: 10%;
+
+/* Navigation Menu */
+nav {
+    justify-content: center;
 }
-main {
-    float: left;
-    width: 80%;
+.navigation {
+    font-family: var(--subheading-font);
 }
+
+.navigation li {
+    display: inline-block;
+    padding: 0.5em 1em;
+    margin: 0 1em;
+    font-size: 1.5rem;
+    background-color: rgb(96, 151, 200);
+    border-radius: 1.5em 0em;
+}
+
+/* Heading */
 #title {
     font-size: var(--title-size);
     font-family: var(--main-font);
     color: var(--title-color);
     text-align: center;
 }
+.desc {
+   color: rgb(90, 28, 135);
+   text-align: center;
+   padding-top: 1em;
+}
+main {
+    
+}
+/* Interactive Navigation */
+h2 {
+    text-align: center;
+}
+
 .favorites {
     display: flex;
     flex-direction: row;
@@ -52,18 +78,16 @@ main {
 #local, #hazel, #reading {
     flex: 1; /* setting flex-basis to 0 distributes flex items evenly across the flexbox*/
     /* Random padding that sqishes the elements, making it difficult to read   */
-    padding: 1rem 5rem 3rem;
-    border: black 1em dashed;
+    padding: 1em;
+    margin: 0.5em;
+    border: rgb(210, 100, 100) 0.5em groove;
+
 }
 h2~p {
     color: var(--main-color);
     font-family: var(--subheading-font);
 }
-aside {
-    /* Obscenely large navigation */
-    font-family: var(--subheading-font);
-    font-size: 2rem;
-}
+
 li {
     list-style-type: "❈  ";
 }
@@ -78,9 +102,7 @@ a[href]:hover {
 a[href]:visited {
     color: rgb(74, 12, 13)
 }
-.desc {
-   color: rgb(90, 28, 135);
-}
+
 
 img {
     border: rgb(2, 42, 241), 0.5em, dotted;
