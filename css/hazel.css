@@ -32,13 +32,37 @@ h2 {
     font-family: var(--subheading-font);
     letter-spacing: 2rem;
 }
-aside {
-border-left: blue 20px solid;
-float: right;
-font-size: medium;
-text-align: center;
-width: 10%;
-font-size: 1em;
+nav {
+    justify-content: center;
+}
+.navigation {
+    font-family: var(--subheading-font);
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+    justify-content: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.navigation li {
+    padding: 0.5em 1em;
+    margin: 0 1em;
+    font-size: 1.5rem;
+    background-color: lemonchiffon;
+    border-radius: 1.5em 0em;
+    box-shadow: black 0.08em 0.08em 0.25em;
+    
+    a[href] {
+        text-decoration: none;
+    }
+}
+
+.navigation li:hover {
+    list-style-type: none;
+    a[href]{
+        color: yellow;
+    }
 }
 a[href] {
     padding-left: 1rem;

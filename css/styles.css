@@ -11,13 +11,6 @@
     --text-size: 1em;
     --text-weight: 400;
 
-    /*Colors*/
-    --title-color: #813937;
-    --subheading-color: #755151;
-    --main-color: rgb(52, 8, 106);
-    --navigation-color: rgb(84, 18, 62);
-    --accent-color-1: #813937;
-
     /* Palette */
     --color-brown-900: #443423;
     --color-brown-700: #6a5237;
@@ -75,7 +68,7 @@ nav {
 #title {
     font-size: var(--title-size);
     font-family: var(--main-font);
-    color: var(--title-color);
+    color: var(--color-rose-700);
     text-align: center;
     text-shadow: 0.04em 0.06em 0.1em rgba(0, 0, 0, 0.25);
     
@@ -92,7 +85,7 @@ nav {
 /* Section */
 section {
     margin: 1em;
-    padding: 1em;
+    padding: 1.75em;
     min-width: 0;
     max-width: 20rem;
     background-color: #f4f2ec;
@@ -143,11 +136,9 @@ img {
     display: block;
     margin: 0 auto; /* centers the image in the card */
     max-width: 100%;
-    max-height: auto;
-    object-fit: cover;    
-    border: 2px groove black;
+    max-height: auto;    
+    border: var(--color-brown-900) 0.2em solid;
     border-radius: 1em;
-    box-shadow: var(--color-brown-900) 0.05 0.05 0.05;
 }
 
 footer {
