@@ -1,5 +1,5 @@
 :root {
-    --main-bg: linear-gradient(rgb(171, 79, 79), rgb(165, 220, 165), rgb(182, 187, 44));
+    --main-bg: linear-gradient(#c3a580, #967857,#6a5237);
 
     /*Fonts*/
     --main-font: "Eagle Lake", serif; 
@@ -12,16 +12,28 @@
     --text-weight: 400;
 
     /*Colors*/
-    --title-color: rgb(65, 59, 134);
-    --subheading-color: rgb(165, 33, 64);
+    --title-color: #813937;
+    --subheading-color: #755151;
     --main-color: rgb(52, 8, 106);
     --navigation-color: rgb(84, 18, 62);
+    --accent-color-1: #813937;
+
+    /* Palette */
+    --color-brown-900: #443423;
+    --color-brown-700: #6a5237;
+    --color-brown-500: #967857;
+    --color-brown-300: #c3a580;
+    --color-amber-100: #D8cbb5;
+    --color-rose-700:  #813937;
 }
 
 body {
-    background-image: var(--main-bg);
+    background-image: url(../images/jozefm84-flower-6937265_1920.png), var(--main-bg);
+    background-repeat: no-repeat;
+    background-size: cover;
     font-family: var(--text-font);
-    color: var(--main-color);
+    color: var(--color-brown-900);
+
 }
 
 /* Navigation Menu */
@@ -32,19 +44,31 @@ nav {
     font-family: var(--subheading-font);
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
     list-style-type: none;
-    border-top: black 2px solid;
-    border-bottom: black 2px solid;
     justify-content: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .navigation li {
     padding: 0.5em 1em;
     margin: 0 1em;
     font-size: 1.5rem;
-    background-color: rgb(96, 151, 200);
+    background-color: var(--color-amber-100);
     border-radius: 1.5em 0em;
+    box-shadow: var(--color-brown-900) 0.08em 0.08em 0.25em;
+    
+    a[href] {
+        text-decoration: none;
+    }
+}
+
+.navigation li:hover {
+    background-color: var(--color-rose-700);
+    list-style-type: none;
+    a[href]{
+        color: var(--color-amber-100);
+    }
 }
 
 /* Heading */
@@ -53,21 +77,40 @@ nav {
     font-family: var(--main-font);
     color: var(--title-color);
     text-align: center;
+    text-shadow: 0.04em 0.06em 0.1em rgba(0, 0, 0, 0.25);
+    
 }
 .desc {
-   color: rgb(90, 28, 135);
+   color: var(--color-brown-900);
    text-align: center;
    padding-top: 1em;
+   font-size: 1.5rem;
+   background-color: var(--color-amber-100);
+   
 }
 
-/* Interactive Navigation */
-h2 {
-    text-align: center;
+/* Section */
+section {
+    margin: 1em;
+    padding: 1em;
+    min-width: 0;
+    max-width: 20rem;
+    background-color: #f4f2ec;
+    border: #4e2323 0.5em groove;
 }
 
-.favorites {
+section a {
+    display: block;
+}
+
+.main-page-sections {
     display: flex;
-    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;   
+    gap: 1.5em;
+    max-width: 80rem;          
+    margin: 0 auto;      
+    padding: 1em;
 }
 
 .section-subheading::first-letter {
@@ -79,14 +122,14 @@ h2 {
     font-family: var(--main-font);
     font-weight: 400;
 }
-#local, #hazel, #reading {
-    flex: 1; /* setting flex-basis to 0 distributes flex items evenly across the flexbox*/
-    border: rgb(210, 100, 100) 0.5em groove;
-
+#about, #hazel, #library {
+    box-shadow: var(--color-brown-900) 0.08em 0.08em 0.25em;
 }
+
 h2~p {
     color: var(--main-color);
     font-family: var(--subheading-font);
+    padding-bottom: 0.25em;
 }
 
 li {
@@ -96,27 +139,44 @@ a[href] {
     color: var(--main-color);
 }
 
-a[href]:hover {
-    color: rgb(0, 255, 85);
-}
-
-a[href]:visited {
-    color: rgb(74, 12, 13)
-}
-
-
 img {
-    border: rgb(2, 42, 241), 0.5em, dotted;
+    display: block;
+    margin: 0 auto; /* centers the image in the card */
+    max-width: 100%;
+    max-height: auto;
+    object-fit: cover;    
+    border: 2px groove black;
     border-radius: 1em;
+    box-shadow: var(--color-brown-900) 0.05 0.05 0.05;
 }
 
 footer {
-    color: rgb(94, 84, 35);
-    clear: both;
+    color: rgb(35, 19, 1);
+}
+
+@media screen and (max-width: 768px) {
+    .main-page-sections {
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+    .navbar {
+        text-align: center;
+    }
+    .navigation {
+        flex-direction: column;
+        border: none;
+        text-align: center;
+        padding: 1em;
+    }
+    .navigation li {
+        margin: 0.25em 0;
+        list-style-type: none;
+    }
 }
 
 /*
 ** Citatons **
 * https://codeshack.io/bullet-point-symbols/
 * https://fonts.google.com/
+* https://tailwindcss.com/docs/colors
 */
