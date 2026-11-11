@@ -4,4 +4,104 @@
 
     /*Font Sizes*/
 
+    /* Color */
+    --color-purple-900: #211d2d;
+    --color-purple-600: #50354f;
+    --color-purple-300: #8d7694;
+    --color-yellow-500: #b49a68;
+    --color-yellow-200: #eee2cc;
+    --soft-gradient: linear-gradient(var(--color-yellow-200), var(--color-purple-300) );
+
+    /* Images */
+    --background-image: url(../images/jwskks5786-textile-2072568.jpg); 
+
 }
+
+body {
+    background-image: var(--background-image);
+    background-repeat: no-repeat;
+    background-size: cover;
+    line-height: 1.5;
+}
+
+/* Heading */
+h1, h2 {
+    text-align: center;
+}
+h2 {
+    color: var(--color-yellow-500);
+
+}
+/* Navigation Menu */
+.navigation {
+    font-family: var(--subheading-font);
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+    justify-content: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.navigation li {
+    padding: 0.5em 1.5em;
+    margin: 1em;
+    font-size: 1.5em;
+    background-image: var(--soft-gradient);
+    border-radius: 1.5em 0em;
+    border: #b49a68 0.1em groove;
+    box-shadow: var(--color-purple-900) 0.1em 0.1em 0.30em;
+
+    a[href] {
+        text-decoration: none;
+        color: var(--color-mauve-700);
+    }
+}
+
+.navigation li:hover {
+    list-style-type: none;
+    background-color: var(--color-mauve-700);
+    a[href]{
+        color: #ded2c3;
+    }
+}
+
+/* Section */
+.main-page-sections {
+    display: flex;
+}
+
+section {
+    background-color: #211d2d;
+    color: var(--color-yellow-200);
+    padding: 1em 1.5em;
+    margin: 1em;
+    border-radius: 1.5em;
+    border: #b49a68 0.1em groove;
+    box-shadow: var(--color-purple-900) 0.3em 0.3em 0.30em;
+
+}
+
+@media screen and (max-width: 768px) {
+    .main-page-sections {
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+    .navbar {
+        text-align: center;
+    }
+    .navigation {
+        flex-direction: column;
+        border: none;
+        text-align: center;
+        padding: 1em;
+    }
+    .navigation li {
+        margin: 0.25em 0;
+        list-style-type: none;
+    }
+}
+
+/* All images are from pixabay
+    --background-image: jwskks5786
+*/

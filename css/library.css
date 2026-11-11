@@ -3,8 +3,8 @@
     --main-bg: #D9D6D2;
     --aside-bg: #8c3A40;
     --heading: #400A0F;
-    --text: #402B11;
-    --nav-links: #754B4D;
+    --text: #241706;
+    --nav-links: #462628;
     --nav-link-hover: #4f4824;
 
     --section-bg: url(../images/pexels-eva-bronzini-peper-texture.jpg);
@@ -21,16 +21,17 @@ body,html {
 body{
     background-color: var(--main-bg);
     font-family: var(--text-font);
-    height: 100%;
-    width: 100%;
     line-height: 1.5;
     background-size: cover;
     background-repeat: no-repeat;
+    color: var(--text);
 }
 .main-page {
     display: flex;
+    flex-direction: row;
     margin: 0 auto;
     max-width: 90%;
+    border: var(--heading) 0.5em groove;
 }
 li {
     list-style-type: "❈  ";
@@ -64,39 +65,23 @@ li {
 }
 
 /* Sections */
-section {
-    flex-basis: 65%;
+.main-page section {
     margin: 1em;
-    flex-wrap: wrap;
+    flex: 1;
+    padding: 1em;
     border: black 3px groove;
     background-image: var(--section-bg);
     background-size: contain;
+    font-size: 1.07em;
 }
-section li a[href] {
-    text-decoration: none;
-    color: var(--nav-links);
+section li {
+    a[href] {
+        text-decoration: none;
+        color: var(--nav-links);
+    }
 }
 section h2 {
     text-align: center;
-}
-.library-current {
-    flex-basis: 60%;
-}
-.current-reading-section {
-    padding: 1rem 1em;
-    line-height: 3;
-}
-.library-wishlist-div {
-    display: flex;
-    direction: row;
-    flex-basis: 40%;
-
-}
-.wishlist-section {
-    flex-basis: 50%;
-}
-.bookstore-section {
-    flex-basis: 50%;
 }
 
 /* Headings */
@@ -128,7 +113,11 @@ footer {
     }
     .navigation li {
         margin: 0.25em 0;
+        list-style-type: none;
     }
-
+    .main-page {
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
 }
 

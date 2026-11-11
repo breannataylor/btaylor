@@ -1,40 +1,30 @@
 :root {
-    /* Colors used multiple times */
-    --main-bg-color: linear-gradient(to bottom, red, yellow);
-    --heading-color: #dcdf37;
-    --horrible-bg: linear-gradient(to right, purple, rgb(77, 124, 78), rgb(99, 73, 14));
    /*Fonts*/
     --main-font: "Eagle Lake", serif; 
     --text-font: "Luxurious Roman", serif;
     --subheading-font: "Playfair Display SC", serif;
     /*Font Sizes*/
-    --title-size: 4rem;
+    --title-size: 2rem;
     --text-size: 1em;
     --text-weight: 400;
+
+    /* Palette */
+    --color-taupe-300: #ded2c3;
+    --color-rose-300: #a97982;
+    --color-mauve-700: #603a4d;
+    --color-purple-200: #8c8195;
+    --color-purple-900: #302634;
+    --color-green-800:  #727966;
 }
 body {
-    background-image: var(--main-bg-color);
+    background-image: url(../images/auvryon-ai-generated-9052479.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    line-height: 1.5;
 } 
+
 /* Navigation Menu */
-
-h1 {
-    align-items: center;
-    padding: 0 3rem 0 3rem;
-    font-family: var(--heading-font);
-    font-weight: 700;
-    font-size: 3rem;
-
-}
-h1, h2 {
-    color: var(--heading-color);
-}
-h2 {
-    font-family: var(--subheading-font);
-    letter-spacing: 2rem;
-}
-nav {
-    justify-content: center;
-}
 .navigation {
     font-family: var(--subheading-font);
     display: flex;
@@ -46,59 +36,101 @@ nav {
 }
 
 .navigation li {
-    padding: 0.5em 1em;
-    margin: 0 1em;
-    font-size: 1.5rem;
-    background-color: lemonchiffon;
+    padding: 0.5em 1.5em;
+    margin: 1em;
+    font-size: 1.5em;
+    background-color: var(--color-taupe-300);
     border-radius: 1.5em 0em;
-    box-shadow: black 0.08em 0.08em 0.25em;
-    
+    box-shadow: var(--color-purple-900) 0.08em 0.08em 0.25em;
+
     a[href] {
         text-decoration: none;
+        color: var(--color-mauve-700);
     }
 }
 
 .navigation li:hover {
     list-style-type: none;
+    background-color: var(--color-mauve-700);
     a[href]{
-        color: yellow;
+        color: #ded2c3;
     }
+} 
+/* Headings */
+header {
+    text-align: center;
 }
-a[href] {
-    padding-left: 1rem;
-    color: darkviolet;
+
+h1 {
+    padding: 0 3rem;
+    font-family: var(--main-font);
+    font-weight: 700;
+    font-size: 2.25em;
+
 }
+h1, h2 {
+    color: var(--color-mauve-700);
+    text-shadow: 0.05em 0.05em var(--color-purple-900);
+}
+h2 {
+    font-family: var(--subheading-font);
+}
+
+
 main {
-    float: left;
-    width: 90%;
     text-align: center;
     font-family: var(--main-font);
 }
 main p {
-    text-align: justify;
-    border: lightseagreen 1rem dashed;
-    /* Making the explanation the center of attention */
-    padding: 4rem 2rem;
+    text-align: center;
+    border: var(--color-purple-900) 0.5em solid;
+    padding: 1em;
+    background-color: var(--color-taupe-300);
 }
 .fav-container {
-    column-count: 3;
-    /* Random margins - I used a random number picker between 1 and 5*/
-    margin: 1rem 4rem 2rem 5rem;
+    display: flex;
     background-image: var(--horrible-bg);
 }
 .favorites {
-    /* Padding the inside to wrap the words and make it difficult to read and misaligns bg */
-    padding: 1rem 9rem;
-    border-right: 10px dotted rgb(204, 30, 192) ;
+    flex-basis: 33.333%;
+    margin: 1em;
+    padding: 0.5em;
+    border: var(--color-purple-900) 0.75em groove;
+    background-color: var(--color-taupe-300);
+    li {
+        list-style-type: "❀";
+    }
 }
 img {
-    border: green 2px dashed;
+    border: var(--color-green-800) 0.8em groove;
+}
+
+.back-to-top {
+    color: var(--color-taupe-300);
 }
 footer {
     clear: both;
-    background-image: var(--horrible-bg);
+    color:var(--color-taupe-300);
 }
 
+@media screen and (max-width: 768px) {
+    .navbar {
+        text-align: center;
+    }
+    .navigation {
+        flex-direction: column;
+        border: none;
+        text-align: center;
+        padding: 1em;
+    }
+    .navigation li {
+        margin: 0.25em 0;
+        list-style-type: none;
+    }
+    .fav-container {
+        flex-wrap: wrap;
+    }
+}
 /*
 ** Citatons **
 * https://www.w3.org/Style/Examples/007/fonts.en.html
