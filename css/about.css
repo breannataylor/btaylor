@@ -82,6 +82,7 @@ h2 {
 
 section {
     background-color: #211d2d;
+    flex:1;
     color: var(--color-yellow-200);
     padding: 1em 1.5em;
     margin: 1em;
