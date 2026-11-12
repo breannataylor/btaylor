@@ -62,17 +62,21 @@ header {
 }
 
 h1 {
-    padding: 0 3rem;
+    padding: 1rem;
     font-family: var(--main-font);
     font-weight: 700;
     font-size: 2.25em;
+    color: var(--color-purple-900);
+    background-image: linear-gradient(var(--color-purple-200),var(--color-taupe-300));
+    border: var(--color-purple-900) 0.5em groove;
+    max-width: 50%;
 
 }
 h1, h2 {
-    color: var(--color-mauve-700);
-    text-shadow: 0.05em 0.05em var(--color-purple-900);
+    text-shadow: 0.05em 0.04em var(--color-purple-900);
 }
 h2 {
+    color: var(--color-mauve-700);
     font-family: var(--subheading-font);
 }
 
