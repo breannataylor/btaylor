@@ -1,70 +1,35 @@
 :root {
     /* Colors */
-    --main-bg: #100d1a;
-    --heading: #e8cf8a;
-    --text: #f3ead3;
-    --nav-links: #f3ead3;
-    --nav-link-hover: #100d1a;
-
-    /* Palette: jewel tones on a deep ink background */
     --color-ink-900: #100d1a;
     --color-parchment-200: #f3ead3;
-    --color-gold-300: #e8cf8a;      /* light gold: links and headings, readable on every jewel */
-    --color-gold-500: #c4a35a;      /* gold: borders */
-    --color-emerald-800: #0f5a44;
-    --color-sapphire-800: #1c3f7a;
-    --color-ruby-800: #8a1f45;
-    --color-amethyst-800: #5b2e83;
+    --color-gold-300: #e8cf8a;
+    --color-gold-500: #c4a35a;
 
     /* Fonts */
-    --main-font: "Italiana", serif;
-    --text-font: "Unna", serif;
+    --accent-font: "Italiana", serif;
+    --main-font: "Unna", serif;
 
     /*Font Sizes*/
     --title-size: clamp(2rem, 7vw, 3.5rem);
-    --text-size: 1.15rem;
-    --text-weight: 400;
+    --text-size: 1.15em;
+    --text-weight: 200;
 }
 
-/* Page: column layout keeps the footer at the bottom and the page at least one screen tall */
+/* Page */
 body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
     margin: 0;
-    background-color: var(--main-bg);
-    font-family: var(--text-font);
+    background-color: var(--color-ink-900);
+    font-family: var(--main-font);
     font-size: var(--text-size);
     font-weight: var(--text-weight);
     line-height: 1.5;
-    color: var(--text);
-}
-main {
-    flex: 1;
-    padding: 0 1em 1em;
+    color: var(--color-gold-500);
 }
 
-/* Grid: three boxes plus a sidebar on the right.
-   Each quoted line is one row; repeating a name makes that box span columns or rows. */
-.main-page {
-    display: grid;
-    grid-template-columns: 1fr 1fr 16rem;   /* two equal content columns, fixed-width sidebar */
-    grid-template-areas:
-        "reads games sidebar"               /* Row 1: Current Reads, Current Games, Sidebar */
-        "wishlist wishlist sidebar";        /* Row 2: Wishlist spans both content columns, Sidebar continues */
-    gap: 1.5em;
-    max-width: 75rem;
-    margin: 0 auto;
-}
-.current-reading-section { grid-area: reads; }
-.current-games-section   { grid-area: games; }
-.wishlists-section       { grid-area: wishlist; }
-.links-section {
-    grid-area: sidebar;
-    align-self: start;    /* sidebar is only as tall as its links instead of stretching */
-}
-
-/* Navigation (flex container) */
+/* Navigation */
 .navigation {
     display: flex;
     flex-direction: row;
@@ -78,46 +43,69 @@ main {
 .navigation li {
     padding: 0.3em 1em;
     margin: 0.4em 0.75em;
-    font-family: var(--main-font);
+    font-family: var(--accent-font);
     font-size: 1.4rem;
     border-radius: 1.5em 0em;
     border: var(--color-gold-500) 2px solid;
 }
 .navigation a[href] {
-    color: var(--nav-links);
+    color: var(--color-parchment-200);
     text-decoration: none;
 }
 .navigation li:hover {
     background-color: var(--color-gold-300);
     a[href] {
-        color: var(--nav-link-hover);
+        color: var(--color-ink-900);
     }
 }
 
-/* Boxes: */
-.main-page section,
-.main-page aside {
-    min-width: 0;              /* lets grid items shrink instead of overflowing */
+main {
+    flex: 1;
+    padding: 0 1em 1em;
+}
+
+/* Grid: */
+.main-page {
+    display: grid;
+    grid-template-columns: 1fr 1fr 16rem;
+    grid-template-areas:
+        "reads games sidebar"
+        "wishlist wishlist sidebar";
+    gap: 1.5em;
+    max-width: 75rem;
+    margin: 0 auto;
+}
+.current-reading-section { 
+    grid-area: reads; 
+}
+.current-games-section   { 
+    grid-area: games; 
+}
+.wishlists-section { 
+    grid-area: wishlist; 
+}
+.links-section {
+    grid-area: sidebar;
+    align-self: start;   
+}
+
+/* Boxes */
+.main-page section, .main-page aside {             
     display: flex;
     flex-direction: column;
-    background-color: var(--jewel);
     border: var(--color-gold-500) 3px groove;
     border-radius: 0.5em;
     box-shadow: 0.25em 0.25em 0.6em rgba(0, 0, 0, 0.7);
 }
-
-/* Box titles*/
 .main-page h2 {
     margin: 0;
     padding: 0.4em 0.5em;
     font-size: 1.8rem;
-    color: var(--heading);
+    color: var(--color-gold-300);
     background-color: rgba(16, 13, 26, 0.45);
     border-bottom: var(--color-gold-500) 1px solid;
 }
 
-/* List inside each box. No fixed height, so each box grows to fit its content;
-   boxes in the same grid row stay equal height automatically. */
 .library-list {
     margin: 0;
     padding: 1em 1.25em 1em 2.25em;
@@ -132,41 +120,40 @@ main {
 .library-list a[href] {
     color: var(--color-gold-300);
 }
-.library-list a[href]:hover,
-.library-list a[href]:focus {
+.library-list a[href]:hover, .library-list a[href]:focus {
     color: var(--color-parchment-200);
 }
 
 /* Headings */
 h1, h2 {
-    font-family: var(--main-font);
+    font-family: var(--accent-font);
     font-weight: var(--text-weight);
     text-align: center;
 }
 h1 {
     margin: 0.75em auto 0.25em;
     font-size: var(--title-size);
-    color: var(--heading);
+    color: var(--color-gold-300);
     letter-spacing: 0.04em;
 }
 
-/* Links and footer */
+/* Footer */
 .back-to-top {
     display: block;
     margin-top: 1.5em;
     text-align: center;
-    color: var(--heading);
+    color: var(--color-gold-300);
 }
 footer {
     padding: 1em;
     text-align: center;
-    color: var(--heading);
+    color: var(--color-gold-300);
     border-top: var(--color-gold-500) 1px solid;
 }
 
-/* media query to adjust for smaller screens */
+/* Media query */
 @media only screen and (max-width: 768px) {
-    /* One column: each box stacks in order, sidebar last */
+    /* One column - each box stacks in order, sidebar last */
     .main-page {
         grid-template-columns: 1fr;
         grid-template-areas:

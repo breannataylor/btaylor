@@ -11,7 +11,7 @@
     --text-size: 1em;
     --text-weight: 400;
 
-    /* Palette */
+    /* Colors */
     --color-brown-900: #443423;
     --color-brown-700: #6a5237;
     --color-brown-500: #967857;
@@ -153,7 +153,7 @@ a[href] {
 
 img {
     display: block;
-    margin: 0 auto; /* centers the image in the card */
+    margin: 0 auto;
     max-width: 100%;
     max-height: auto;    
     border: var(--color-brown-900) 0.2em solid;
