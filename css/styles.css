@@ -12,7 +12,6 @@
     --text-weight: 400;
 
     /* Palette */
-    /* Experiementing with variable naming conventions*/
     --color-brown-900: #443423;
     --color-brown-700: #6a5237;
     --color-brown-500: #967857;
@@ -21,12 +20,20 @@
     --color-rose-700:  #813937;
 }
 
+/* Includes padding and border in width and height calculations */
+* {
+  box-sizing: border-box;
+}
+
 body {
     background-image: url(../images/jozefm84-flower-6937265_1920.png), var(--main-bg);
     background-repeat: no-repeat;
     background-size: cover;
+    background-attachment: fixed;
     font-family: var(--text-font);
+    font-size: 1rem;
     color: var(--color-brown-900);
+    line-height: 1.5;
 
 }
 
@@ -47,7 +54,7 @@ nav {
 .navigation li {
     padding: 0.5em 1em;
     margin: 0 1em;
-    font-size: 1.5rem;
+    font-size: 1em;
     background-color: var(--color-amber-100);
     border-radius: 1.5em 0em;
     box-shadow: var(--color-brown-900) 0.08em 0.08em 0.25em;
@@ -78,29 +85,38 @@ nav {
    color: var(--color-brown-900);
    text-align: center;
    padding-top: 1em;
-   font-size: 1.5rem;
+   font-size: 1em;
    background-color: var(--color-amber-100);
    
 }
 
 /* Section */
 section {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
     margin: 1em;
     padding: 1.75em;
-    min-width: 0;
-    max-width: 20rem;
+    justify-self: center;
+    width: 100%;
     background-color: #f4f2ec;
     border: #4e2323 0.5em groove;
 }
 
-section a {
-    display: block;
-}
-
 .main-page-sections {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;   
+    display: grid;
+    /* 
+    Creates as many columns will fit the element
+    Minimum width: 16rem; doesn't exceed the width of the container
+    Max is an equal share of the rest of the space
+    */
+    grid-template-columns: repeat(
+        auto-fit,
+        minmax(
+            min(16rem, 100%),
+            1fr
+        )
+    );
     gap: 1.5em;
     max-width: 80rem;          
     margin: 0 auto;      
@@ -142,6 +158,11 @@ img {
     border-radius: 1em;
 }
 
+img:hover {
+    transform: translate(0, -1em);
+}
+
+/* Footer */
 footer {
     color: rgb(35, 19, 1);
 }
@@ -171,4 +192,7 @@ footer {
 * https://codeshack.io/bullet-point-symbols/
 * https://fonts.google.com/
 * https://tailwindcss.com/docs/colors
+* https://www.w3schools.com/cssref/playdemo.php?filename=playcss_overflow-wrap&preval=break-word
+* https://www.w3schools.com/css/css3_box-sizing.asp
+* https://www.w3schools.com/cssref/pr_grid-template-columns.php
 */
