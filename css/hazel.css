@@ -1,11 +1,14 @@
 :root {
-   /*Fonts*/
+    /*Fonts*/
     --main-font: "Eagle Lake", serif; 
     --text-font: "Luxurious Roman", serif;
     --subheading-font: "Playfair Display SC", serif;
+
     /*Font Sizes*/
-    --title-size: 2rem;
-    --text-size: 1em;
+    --title-size: clamp(1.75rem, 7vw, 2.5rem);   
+    --heading-size: 1.5rem;                      
+    --nav-size: 1.25rem;                         
+    --text-size: 1.1rem;                         
     --text-weight: 400;
 
     /* Palette */
@@ -16,29 +19,50 @@
     --color-purple-900: #302634;
     --color-green-800:  #727966;
 }
+
+/* Includes padding and border in width and height calculations */
+* {
+    box-sizing: border-box;
+}
+
+/* Page: column layout keeps the footer at the bottom and the page at least one screen tall */
 body {
     background-image: url(../images/auvryon-ai-generated-9052479.png);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
+    background-attachment: fixed;
+    background-color: var(--color-purple-900);
+    font-family: var(--main-font);
+    font-size: var(--text-size);
+    font-weight: var(--text-weight);
     line-height: 1.5;
+    min-height: 100vh;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
 } 
+main {
+    flex: 1;
+    padding: 0 1em 1em;
+    text-align: center;
+}
 
-/* Navigation Menu */
+/* Navigation Menu (flex container) */
 .navigation {
     font-family: var(--subheading-font);
+    font-size: var(--nav-size);
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     list-style-type: none;
     justify-content: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+    padding: 0;
 }
 
 .navigation li {
     padding: 0.5em 1.5em;
-    margin: 1em;
-    font-size: 1.5em;
+    margin: 0.4em 0.75em;
     background-color: var(--color-taupe-300);
     border-radius: 1.5em 0em;
     box-shadow: var(--color-purple-900) 0.08em 0.08em 0.25em;
@@ -53,71 +77,101 @@ body {
     list-style-type: none;
     background-color: var(--color-mauve-700);
     a[href]{
-        color: #ded2c3;
+        color: var(--color-taupe-300);
     }
 } 
+
 /* Headings */
 header {
     text-align: center;
 }
 
 h1 {
-    padding: 1rem;
+    margin: 0.75em auto 0.5em;
+    padding: 0.5em 1em;
     font-family: var(--main-font);
     font-weight: 700;
-    font-size: 2.25em;
+    font-size: var(--title-size);
     color: var(--color-purple-900);
     background-image: linear-gradient(var(--color-purple-200),var(--color-taupe-300));
-    border: var(--color-purple-900) 0.5em groove;
+    border: var(--color-purple-900) 0.4em groove;
     max-width: 50%;
-
 }
 h1, h2 {
     text-shadow: 0.05em 0.04em var(--color-purple-900);
 }
 h2 {
+    margin-top: 0;
     color: var(--color-mauve-700);
     font-family: var(--subheading-font);
+    font-size: var(--heading-size);
 }
 
 
-main {
-    text-align: center;
-    font-family: var(--main-font);
+#hazel-picture {
+    margin-bottom: 1em;
 }
 main p {
-    text-align: center;
-    border: var(--color-purple-900) 0.5em solid;
+    max-width: 50rem;              
+    margin: 1em auto;
     padding: 1em;
+    text-align: center;
+    border: var(--color-purple-900) 0.4em solid;
     background-color: var(--color-taupe-300);
 }
+
+/* Favorites */
 .fav-container {
-    display: flex;
-    background-image: var(--horrible-bg);
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(14rem, 100%), 1fr));
+    gap: 1.5em;
+    max-width: 70rem;
+    margin: 1.5em auto 0;
 }
-.favorites {
-    flex-basis: 33.333%;
-    margin: 1em;
-    padding: 0.5em;
-    border: var(--color-purple-900) 0.75em groove;
+.favorites { 
+    padding: 0.75em 1em;
+    border: var(--color-purple-900) 0.5em groove;
     background-color: var(--color-taupe-300);
+    ul {
+        margin: 0;
+        padding: 0;
+    }
     li {
-        list-style-type: "❀";
+        list-style-type: "❀  ";
+        list-style-position: inside; /* keeps the flower next to centered text */
+        margin-bottom: 0.4em;
     }
 }
+
+/* Images */
 img {
-    border: var(--color-green-800) 0.8em groove;
+    max-width: 100%;
+    height: auto;                  /* keeps the picture's proportions on small screens */
+    border: var(--color-green-800) 0.6em groove;
 }
 
+/* Footer */
 .back-to-top {
+    display: block;
+    width: fit-content;
+    margin: 1.5em auto 0;
+    padding: 0.4em 1em;
     color: var(--color-taupe-300);
+    background-color: var(--color-purple-900);
+    border-radius: 1.5em 0em;
 }
 footer {
-    clear: both;
-    color:var(--color-taupe-300);
+    padding: 0.75em;
+    text-align: center;
+    color: var(--color-taupe-300);
+    background-color: var(--color-purple-900);
 }
 
+/* media query to adjust for smaller screens */
 @media screen and (max-width: 768px) {
+    h1 {
+        max-width: 100%;
+    }
     .navbar {
         text-align: center;
     }
@@ -132,7 +186,7 @@ footer {
         list-style-type: none;
     }
     .fav-container {
-        flex-wrap: wrap;
+        grid-template-columns: 1fr;   /* one box per row */
     }
 }
 /*

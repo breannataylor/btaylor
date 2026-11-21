@@ -31,7 +31,6 @@ body {
     background-size: cover;
     background-attachment: fixed;
     font-family: var(--text-font);
-    font-size: 1rem;
     color: var(--color-brown-900);
     line-height: 1.5;
 
@@ -42,7 +41,7 @@ nav {
     justify-content: center;
 }
 .navigation {
-    font-family: var(--subheading-font);
+    font-family: var(--main-font);
     display: flex;
     flex-direction: row;
     list-style-type: none;
@@ -52,23 +51,26 @@ nav {
 }
 
 .navigation li {
-    padding: 0.5em 1em;
-    margin: 0 1em;
-    font-size: 1em;
-    background-color: var(--color-amber-100);
+    padding: 0.5em 1.5em;
+    margin: 1em;
+    font-size: 1.5em;
+    background-color: var(--color-rose-700);
     border-radius: 1.5em 0em;
-    box-shadow: var(--color-brown-900) 0.08em 0.08em 0.25em;
-    
+    border: var(--color-brown-900) 0.1em groove;
+    box-shadow: var(--color-purple-900) 0.1em 0.1em 0.30em;
+
     a[href] {
         text-decoration: none;
+        color: var(--color-amber-100);
     }
 }
 
 .navigation li:hover {
-    background-color: var(--color-rose-700);
     list-style-type: none;
+    background-image: none;
+    background-color: var(--color-brown-900);
     a[href]{
-        color: var(--color-amber-100);
+        color: #b49a68;
     }
 }
 

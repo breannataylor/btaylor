@@ -6,55 +6,74 @@
     <!--Stylesheet-->
     <link rel="stylesheet" href="css/library.css">
 
-    <!--Google Fonts-->
+    <!--Google Fonts: Italiana for headings, Unna for body text-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Italiana&family=Redaction+50:ital,wght@0,400;0,700;1,400&family=Unna:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Italiana&family=Unna:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
 
-    <title>Library</title>
+    <title>B.Taylor | Library</title>
 </head>
-<body>
+<body id="top">
     <!--Header-->
     <header>
         <h1>Welcome to the Library!</h1>
     </header>
-    <!--Navigation-->
-        <nav class="navbar">
-                <ul class="navigation">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="hazel.html">Hazel</a></li>
-                    <li><a href="library.html">Library</a></li>
-                </ul>
-            </nav>
-    <!-- Main Page -->
+
+    <!--Navigation (flex container)-->
+    <nav class="navbar">
+        <ul class="navigation">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="hazel.html">Hazel</a></li>
+            <li><a href="library.html">Library</a></li>
+        </ul>
+    </nav>
+
+    <!--Main-->
     <main>
         <div class="main-page">
+            <!--Links-->
+            <aside class="links-section">
+                <h2>Links</h2>
+                <ul class="library-list">
+                    <li><strong><a href="https://www.goodreads.com/" target="_blank">Goodreads</a></strong></li>
+                    <li><strong><a href="https://libro.fm/" target="_blank">Libro.fm</a></strong></li>
+                    <li><strong><a href="https://libertybaybooks.com" target="_blank">Liberty Bay Books</a></strong></li>
+                    <li><strong><a href="https://abebooks.com" target="_blank">Abebooks</a></strong></li>
+                </ul>
+            </aside>
+            <!--Current Reads-->
             <section class="current-reading-section">
-            <h2>Currently Reading</h2>
-            <ul>
+                <h2>Current Reads</h2>
+                <ul class="library-list">
                     <li><strong><a href="https://libertybaybooks.com/book/9780593818749" target="_blank">We'll Prescribe You A Cat</a></strong>: A series of short stories centered around a mysterious doctor's office that prescribes cats to its patients.</li>
                     <li><strong><a href="https://libro.fm/audiobooks/9780063095755-the-cat-who-saved-books" target="_blank">The Cat Who Saved Books</a></strong>: After his grandfather's untimely death, a young boy is left as the sole proprietor of the bookstore he was raised in. One day, a talking cat walks through the door, saying he needs the boy's help to save books.</li>
-                    <li><strong><a href="https://libro.fm/audiobooks/9780735286511-weapons-of-math-destruction" target="_blank">Weapons of Math Destruction</a></strong>: A mathemetician explains how algorithms is utilized in a variety of ways to systematically oppress specific groups in society. Currently reading this in my CS110: Computing Ethics class. </li>
+                    <li><strong><a href="https://libro.fm/audiobooks/9780735286511-weapons-of-math-destruction" target="_blank">Weapons of Math Destruction</a></strong>: A mathematician explains how algorithms are used in a variety of ways to systematically oppress specific groups in society. Currently reading this in my CS110: Computing Ethics class.</li>
                 </ul>
             </section>
-            <section class="wishlists-section">
-            <h2>Wishlist</h2>
-            <ul>
-                <li><strong><a href="https://libertybaybooks.com/book/9781668264041?ic_referral=zAJxJhZBOPTlPwpuMG74i2gs6PI7b01dtzBTQ_5U9nQwM032z6VZa0yogJkNHXB8dDBngdqxudO_Z8EJ8cZcR9AK7uVg5zTrKFtgW5o">The Bridge by Colm Toibin</a></strong></li>
-            </ul>
-            </section>
-            <section class="bookstore-section">
-            <h2>Bookstores</h2>
-            <ul>
-                <li><strong><a href="https://libro.fm/" target="_blank">Libro.fm</a></strong></li>
-                <li><strong><a href="https://libertybaybooks.com" target="_blank">Libro.fm</a></strong></li>
-                <li><strong><a href="https://abebooks.com" target="_blank">Abebooks</a></strong></li>
-            </ul>    
+
+            <!--Current Games-->
+            <section class="current-games-section">
+                <h2>Current Games</h2>
+                <ul class="library-list">
+                    <li><strong>Grand Theft Auto VI</strong></li>
+                    <li><strong>Project Zomboid</strong></li>
+                    <li><strong>Final Fantasy XIV</strong></li>
+                </ul>
             </section>
 
+            <!--Wishlist-->
+            <section class="wishlists-section">
+                <h2>Wishlist</h2>
+                <ul class="library-list">
+                    <li><strong><a href="https://libertybaybooks.com/book/9781668264041" target="_blank">The Bridge by Colm Toibin</a></strong></li>
+                </ul>
+            </section>
         </div>
+        <a href="#top" class="back-to-top">Back to Top</a>
     </main>
-    <footer>&copy BreAnna Taylor</footer>
+
+    <!--Footer-->
+    <footer>&copy; BreAnna Taylor</footer>
 </body>
 </html>

@@ -1,8 +1,11 @@
 :root {
     /*Fonts*/
-
+    --main-font: "Italiana", serif;
+    --text-font: "Unna", serif;
 
     /*Font Sizes*/
+    --title-size: clamp(2rem, 7vw, 3.5rem);
+    --text-size: 1.15rem;
 
     /* Color */
     --color-purple-900: #211d2d;
@@ -17,15 +20,32 @@
 
 }
 
+
 body {
+    display: flex;
+    flex-direction: column; /* Column keeps the footer at the bottom */
+    min-height: 100vh;
+    margin: 0;
     background-image: var(--background-image);
     background-repeat: no-repeat;
     background-size: cover;
+    background-attachment: fixed;
+    background-color: var(--color-purple-900);
+    font-family: var(--text-font);
+    font-size: var(--text-size);
     line-height: 1.5;
+    
+    
+}
+main {
+    flex: 1;
+    padding: 0 1em 1em;
 }
 
 /* Heading */
 h1, h2 {
+    font-family: var(--main-font);
+    font-weight: 400;
     text-align: center;
 }
 h1 {
@@ -34,21 +54,24 @@ h1 {
     border-radius: 1.5em 0.05em;
     box-shadow: var(--color-purple-900) 0.1em 0.1em 0.30em;
     color: var(--color-purple-900);
+    font-size: var(--title-size);
     max-width: 60%;
+    margin: 0.75em auto 0.25em;   /* auto margins center the title */
 }
 h2 {
     color: var(--color-yellow-500);
-
+    margin-top: 0;
 }
-/* Navigation Menu */
+
+/* Navigation Menu*/
 .navigation {
-    font-family: var(--subheading-font);
+    font-family: var(--main-font);
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     list-style-type: none;
     justify-content: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+    padding: 0;
 }
 
 .navigation li {
@@ -62,7 +85,7 @@ h2 {
 
     a[href] {
         text-decoration: none;
-        color: var(--color-mauve-700);
+        color: var(--color-purple-600);
     }
 }
 
@@ -76,25 +99,93 @@ h2 {
 }
 
 /* Section */
+/* Resume grid */
 .main-page-sections {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas: /* Specifies areas in grid layout */
+        "summary summary"
+        "education work"
+        "service organizations"
+        "certifications certifications";
+    gap: 1em;
+    max-width: 70rem;
+    margin: 0 auto;
+}
+/* Assigns sections to designated grid areas*/
+.main-summary        {
+    grid-area: summary; 
+}
+.main-education      {
+    grid-area: education; 
+}
+.main-work-experience {
+    grid-area: work; 
+}
+.main-community-service {
+    grid-area: service; 
+}
+.main-organizations  {
+    grid-area: organizations;
+}
+.main-certifications {
+    grid-area: certifications;
 }
 
 section {
     background-color: #211d2d;
-    flex:1;
     color: var(--color-yellow-200);
     padding: 1em 1.5em;
-    margin: 1em;
+    margin: 0;
+    min-width: 0; 
     border-radius: 1.5em;
     border: #b49a68 0.1em groove;
     box-shadow: var(--color-purple-900) 0.3em 0.3em 0.30em;
 }
+section dt {
+    font-weight: 700;
+    color: var(--color-yellow-500);
+    margin-top: 0.75em;
+}
+section dt:first-child {
+    margin-top: 0;
+}
+section dd {
+    margin-left: 1em;
+}
+section a[href] {
+    color: var(--color-yellow-500);
+}
 
+/* Links and footer */
+.back-to-top {
+    display: block;
+    margin-top: 1em;
+    text-align: center;
+    color: var(--color-yellow-200);
+}
+footer {
+    padding: 0.75em;
+    text-align: center;
+    color: var(--color-yellow-200);
+    background-color: var(--color-purple-900);
+}
+
+/* media query to adjust for smaller screens */
 @media screen and (max-width: 768px) {
+    /* One column: each section stacks in order */
     .main-page-sections {
-        flex-direction: column;
-        flex-wrap: wrap;
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "summary"
+            "education"
+            "work"
+            "service"
+            "organizations"
+            "certifications";
+    }
+    h1 {
+        max-width: 100%;
     }
     .navbar {
         text-align: center;
