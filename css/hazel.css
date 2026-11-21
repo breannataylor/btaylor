@@ -146,7 +146,7 @@ main p {
 /* Images */
 img {
     max-width: 100%;
-    height: auto;                  /* keeps the picture's proportions on small screens */
+    height: auto;
     border: var(--color-green-800) 0.6em groove;
 }
 
@@ -167,7 +167,7 @@ footer {
     background-color: var(--color-purple-900);
 }
 
-/* media query to adjust for smaller screens */
+/* Media queries */
 @media screen and (max-width: 768px) {
     h1 {
         max-width: 100%;
