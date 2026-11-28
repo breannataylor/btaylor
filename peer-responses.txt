@@ -1,0 +1,6 @@
+Suggested Improvements:
+1. Have hover states and click states for the buttons to make it visually clear when users hover over or click them: Added css for when users hover over links
+
+2. Have either an additional About section or an aside to help give more information about what you are passionate about and why this website was made: I already have a blurb about the site on the homepage, so I added additional information about my passions
+
+3. Have an "anchor link" to the top of the page as your journal of reading gets longer: I added "Back to Top" links at the bottom of each page.

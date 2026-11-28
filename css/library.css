@@ -1,15 +1,20 @@
 :root {
     /* Colors */
-    --color-ink-900: #100d1a;
-    --color-parchment-200: #f3ead3;
-    --color-gold-300: #e8cf8a;
-    --color-gold-500: #c4a35a;
+    --color-ink-900: #140e0b;          /* darkest, hover text */
+    --color-walnut-900: #1c1410;       /* page background */
+    --color-mahogany-800: #2d1b15;     /* panels */
+    --color-oxblood-700: #5a1f26;      /* headers */
+    --color-forest-800: #1f3329;       /* accent */
+    --color-parchment-200: #ecdfc0;    /* body text */
+    --color-parchment-400: #c9b88f;    /* text */
+    --color-gold-300: #d9bd6e;         /* accent */
+    --color-gold-500: #a8843f;         /* borders */
 
     /* Fonts */
     --accent-font: "Italiana", serif;
     --main-font: "Unna", serif;
 
-    /*Font Sizes*/
+    /* Font sizes */
     --title-size: clamp(2rem, 7vw, 3.5rem);
     --text-size: 1.15em;
     --text-weight: 200;
@@ -21,12 +26,25 @@ body {
     display: flex;
     flex-direction: column;
     margin: 0;
-    background-color: var(--color-ink-900);
+    background-color: var(--color-walnut-900);
     font-family: var(--main-font);
     font-size: var(--text-size);
     font-weight: var(--text-weight);
     line-height: 1.5;
-    color: var(--color-gold-500);
+    color: var(--color-parchment-200);
+}
+
+/* Headings */
+h1, h2 {
+    font-family: var(--accent-font);
+    font-weight: var(--text-weight);
+    text-align: center;
+}
+h1 {
+    margin: 0.75em auto 0.25em;
+    font-size: var(--title-size);
+    color: var(--color-gold-300);
+    letter-spacing: 0.04em;
 }
 
 /* Navigation */
@@ -37,6 +55,7 @@ body {
     list-style-type: none;
     justify-content: center;
     margin: 0 auto 1.5em;
+    padding: 0;
     border-top: var(--color-gold-500) 2px solid;
     border-bottom: var(--color-gold-500) 2px solid;
 }
@@ -54,9 +73,9 @@ body {
 }
 .navigation li:hover {
     background-color: var(--color-gold-300);
-    a[href] {
-        color: var(--color-ink-900);
-    }
+}
+.navigation li:hover a[href] {
+    color: var(--color-ink-900);
 }
 
 main {
@@ -64,7 +83,7 @@ main {
     padding: 0 1em 1em;
 }
 
-/* Grid: */
+/* Grid */
 .main-page {
     display: grid;
     grid-template-columns: 1fr 1fr 16rem;
@@ -75,66 +94,89 @@ main {
     max-width: 75rem;
     margin: 0 auto;
 }
-.current-reading-section { 
-    grid-area: reads; 
+.current-reading-section {
+    grid-area: reads;
 }
-.current-games-section   { 
-    grid-area: games; 
+.current-games-section {
+    grid-area: games;
 }
-.wishlists-section { 
-    grid-area: wishlist; 
+.wishlists-section {
+    grid-area: wishlist;
 }
 .links-section {
     grid-area: sidebar;
-    align-self: start;   
+    align-self: start;
 }
 
 /* Boxes */
-.main-page section, .main-page aside {             
+.main-page section,
+.main-page aside {
     display: flex;
     flex-direction: column;
+    background-color: var(--color-mahogany-800);
     border: var(--color-gold-500) 3px groove;
     border-radius: 0.5em;
-    box-shadow: 0.25em 0.25em 0.6em rgba(0, 0, 0, 0.7);
+    box-shadow: 0.25em 0.25em 0.6em rgba(0, 0, 0, 0.6);
 }
 .main-page h2 {
     margin: 0;
     padding: 0.4em 0.5em;
     font-size: 1.8rem;
     color: var(--color-gold-300);
-    background-color: rgba(16, 13, 26, 0.45);
+    background-color: var(--color-oxblood-700);
     border-bottom: var(--color-gold-500) 1px solid;
 }
 
+/* Lists */
 .library-list {
+    list-style: none;
     margin: 0;
-    padding: 1em 1.25em 1em 2.25em;
+    padding: 1em 1.25em;
 }
 .library-list li {
-    margin-bottom: 0.9em;
-    list-style-type: "❈  ";
+    position: relative;
+    margin: 0.5em 0;
+    padding-left: 1.75em;
+    list-style: none;
 }
-.library-list li::marker {
+
+/* Default list symbols */
+/* :not() pseudoclass: elements that do not match a list of selectors*/
+.library-list li:not(.playstation):not(.steam)::before {
+    content: "\274B"; /* ❋ */
+    position: absolute;
+    left: 0;
+    top: 0;
     color: var(--color-gold-300);
 }
+
+/* Platform icons */
+.library-list li.playstation::before,
+.library-list li.steam::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.25em;
+    width: 1em;
+    height: 1em;
+    /* SVG works like a stencil - the background color only shows where the icon is opaque. This gives the icon the designated color instead of its base color. */
+    background-color: var(--color-gold-300);
+    mask: var(--icon) no-repeat center / contain;
+}
+.library-list li.playstation {
+    --icon: url('../images/playstation-brands-solid-full.svg');
+}
+.library-list li.steam {
+    --icon: url('../images/steam-brands-solid-full.svg');
+}
+
+/* Links */
 .library-list a[href] {
     color: var(--color-gold-300);
 }
-.library-list a[href]:hover, .library-list a[href]:focus {
+.library-list a[href]:hover,
+.library-list a[href]:focus {
     color: var(--color-parchment-200);
-}
-
-/* Headings */
-h1, h2 {
-    font-family: var(--accent-font);
-    font-weight: var(--text-weight);
-    text-align: center;
-}
-h1 {
-    margin: 0.75em auto 0.25em;
-    font-size: var(--title-size);
-    color: var(--color-gold-300);
-    letter-spacing: 0.04em;
 }
 
 /* Footer */
@@ -153,7 +195,7 @@ footer {
 
 /* Media query */
 @media only screen and (max-width: 768px) {
-    /* One column - each box stacks in order, sidebar last */
+    /* One column: each box stacks in order, sidebar last */
     .main-page {
         grid-template-columns: 1fr;
         grid-template-areas:
@@ -177,3 +219,6 @@ footer {
         list-style-type: none;
     }
 }
+/* Works Cited 
+** https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Selectors/:not
+*/

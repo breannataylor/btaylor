@@ -50,7 +50,7 @@ h1, h2 {
 }
 h1 {
     background-image: var(--soft-gradient);
-    border: #b49a68 0.1em groove;
+    border: var(--color-yellow-500) 0.1em groove;
     border-radius: 1.5em 0.05em;
     box-shadow: var(--color-purple-900) 0.1em 0.1em 0.30em;
     color: var(--color-purple-900);
@@ -68,10 +68,10 @@ h2 {
     font-family: var(--main-font);
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
     list-style-type: none;
     justify-content: center;
-    padding: 0;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .navigation li {
@@ -80,7 +80,7 @@ h2 {
     font-size: 1.5em;
     background-image: var(--soft-gradient);
     border-radius: 1.5em 0em;
-    border: #b49a68 0.1em groove;
+    border: var(--color-yellow-500) 0.1em groove;
     box-shadow: var(--color-purple-900) 0.1em 0.1em 0.30em;
 
     a[href] {
@@ -139,7 +139,7 @@ section {
     margin: 0;
     min-width: 0; 
     border-radius: 1.5em;
-    border: #b49a68 0.1em groove;
+    border: var(--color-yellow-500) 0.1em groove;
     box-shadow: var(--color-purple-900) 0.3em 0.3em 0.30em;
 }
 section dt {
